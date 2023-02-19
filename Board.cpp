@@ -48,6 +48,7 @@ void GameBoard::gameOver()
             }
             else if (i == j && board[i][j] == 'o')
             {
+                // chnange logic here
                 count_o++;
             }
 
