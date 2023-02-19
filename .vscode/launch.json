@@ -1,0 +1,18 @@
+{
+    "configurations": [
+        {
+            "name": "C++ Launch",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/main.exe",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${fileDirname}",
+            "environment": [],
+            "MIMode": "gdb",
+            "miDebuggerPath": "C:\\cygwin64\\bin\\gdb.exe",
+            "preLaunchTask": "C/C++: g++.exe build active file",
+            "externalConsole": true
+        }
+    ]
+}

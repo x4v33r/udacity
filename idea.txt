@@ -1,0 +1,49 @@
+
+
+/*
+
+
+
+checkFigure(int pos_i, pos_j);
+
+
+
+fillGemaboard()
+{
+    for(int i = 1; i < row; i++)
+    {
+        for(int j = 1; j < col; j++)
+        {
+            if(i == j)
+            {
+                checkFigure(i,j);
+            }
+        }
+    }
+}
+
+
+
+*/
+
+/*
+
+checkFigure(int pos_i, pos_j)
+{
+    if(board[pos_i][pos_j] == 'x')
+        count_x++;
+    if(board[pos_i][pos_j] == 'o')
+        count_o++;
+
+    if(count_x == 4)
+        Spieler x gewinnt
+    else if (count_o == 4)
+        Spieler o gewinnt
+    else
+        Tie!
+
+
+}
+
+
+
