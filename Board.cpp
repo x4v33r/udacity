@@ -3,9 +3,9 @@
 
 GameBoard::GameBoard()
 {
-    for (int i = 0; i < 5; i++)
+    for (int i = 0; i < 4; i++)
     {
-        for (int j = 0; j < 5; j++)
+        for (int j = 0; j < 4; j++)
         {
             board[i][j] = '-';
         }
@@ -16,17 +16,46 @@ void GameBoard::gameOver()
 {
     int count_x = 0;
     int count_o = 0;
-    for (int i = 0; i < 5; i++)
+    for (int i = 0; i < 4; i++)
     {
-        for (int j = 0; j < 5; j++)
+        for (int j = 0; j < 4; j++)
         {
-            if (i == j && board[i][j] == 'x')
+
+            if (board[i][j + 1] == 'x' && board[i + 1][j + 2] == 'x' && board[i + 2][j + 3] == 'x')
+            {
+                std::cout << "Player x wins\n";
+                draw_board();
+                gameover = 0;
+            }
+
+            else if (board[i + 1][j] == 'x' && board[i + 2][j + 1] == 'x' && board[i + 3][j + 2] == 'x')
+            {
+                std::cout << "Player x wins\n";
+                draw_board();
+                gameover = 0;
+            }
+
+            else if (board[i][j + 3] == 'x' && board[i + 1][j + 2] == 'x' && board[i + 2][j + 1] == 'x')
+            {
+                std::cout << "Player x wins\n";
+                draw_board();
+                gameover = 0;
+            }
+
+            else if (i == j && board[i][j] == 'x')
             {
                 count_x++;
             }
-            if (i == j && board[i][j] == 'o')
+            else if (i == j && board[i][j] == 'o')
             {
                 count_o++;
+            }
+
+            else
+            {
+                std::cout << "Player o wins\n";
+                draw_board();
+                gameover = 0;
             }
         }
     }
@@ -77,15 +106,15 @@ void GameBoard::read_input()
 void GameBoard::draw_board()
 {
     std::cout << " ";
-    for (int n = 0; n < 5; n++)
+    for (int n = 0; n < 4; n++)
     {
         std::cout << " " << n;
     }
     std::cout << "\n";
-    for (int i = 0; i < 5; i++)
+    for (int i = 0; i < 4; i++)
     {
         std::cout << i << " ";
-        for (int j = 0; j < 5; j++)
+        for (int j = 0; j < 4; j++)
         {
             std::cout << board[i][j] << " ";
         }
