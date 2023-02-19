@@ -3,9 +3,9 @@
 
 GameBoard::GameBoard()
 {
-    for (int i = 0; i < 6; i++)
+    for (int i = 0; i < 5; i++)
     {
-        for (int j = 0; j < 6; j++)
+        for (int j = 0; j < 5; j++)
         {
             board[i][j] = '-';
         }
@@ -16,9 +16,9 @@ void GameBoard::gameOver()
 {
     int count_x = 0;
     int count_o = 0;
-    for (int i = 0; i < 6; i++)
+    for (int i = 0; i < 5; i++)
     {
-        for (int j = 0; j < 6; j++)
+        for (int j = 0; j < 5; j++)
         {
             if (i == j && board[i][j] == 'x')
             {
@@ -31,14 +31,16 @@ void GameBoard::gameOver()
         }
     }
 
-    if (count_x == 4)
+    if (count_x == 3)
     {
         std::cout << "Player x wins";
+        draw_board();
         gameover = 0;
     }
-    if (count_o == 4)
+    if (count_o == 3)
     {
         std::cout << "Player y wins";
+        draw_board();
         gameover = 0;
     }
 }
@@ -75,15 +77,15 @@ void GameBoard::read_input()
 void GameBoard::draw_board()
 {
     std::cout << " ";
-    for (int n = 0; n < 6; n++)
+    for (int n = 0; n < 5; n++)
     {
         std::cout << " " << n;
     }
     std::cout << "\n";
-    for (int i = 0; i < 6; i++)
+    for (int i = 0; i < 5; i++)
     {
         std::cout << i << " ";
-        for (int j = 0; j < 6; j++)
+        for (int j = 0; j < 5; j++)
         {
             std::cout << board[i][j] << " ";
         }

@@ -4,7 +4,7 @@ private:
     int row;
     int col;
     char turn = 'x';
-    char board[6][6];
+    char board[5][5];
 
 public:
     GameBoard();
